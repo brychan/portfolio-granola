@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+.custom-shape-divider-top-1649189188 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.custom-shape-divider-top-1649189188 svg {
+  position: relative;
+  display: block;
+  width: calc(117% + 1.3px);
+  height: 71px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-shape-divider-top-1649189188 .shape-fill {
+  fill: #513816;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.custom-shape-divider-top-1649243111 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-shape-divider-top-1649243111 svg {
+  position: relative;
+  display: block;
+  width: calc(117% + 1.3px);
+  height: 43px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-shape-divider-top-1649243111 .shape-fill {
+  fill: #f8f0e5;
+}
+.custom-shape-divider-bottom-1649262532 {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1649262532 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 240px;
+}
+
+.custom-shape-divider-bottom-1649262532 .shape-fill {
+  fill: #513816;
 }
