@@ -25,7 +25,7 @@ export default function SelectInput({ added, dispatch }) {
   useEffect(() => {
     let addedIds = added.map((i) => i.id);
     setData(fetchData(input, addedIds));
-  }, [input]);
+  }, [input, added]);
   return (
     <div className="shadow-md rounded-xl">
       <div className="relative">
@@ -51,7 +51,7 @@ export default function SelectInput({ added, dispatch }) {
 
         <ul
           className={` transition-all delay-150 duration-300  ounded-md shadow-md bg-white absolute left-0 right-0 -bottom-18 mt-3 p-3 rounded-xl ${
-            !open || data.length == 0 ? "hidden" : ""
+            !open || data.length === 0 ? "hidden" : ""
           }`}
         >
           <li className="text-xs uppercase text-gray-400 border-b border-gray border-solid py-2 px-5 mb-2">

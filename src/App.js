@@ -1,11 +1,9 @@
-import logo from "./logo.svg";
 import { Fragment, useEffect, useReducer, useRef } from "react";
 import "./App.css";
 import oats from "./images/oats.png";
 
 import data from "./data/_ingredients";
 
-import _categories from "./utilities/_categories";
 import CategoriesPage from "./pages/CategoriesPage";
 import {
   shapeDividerCalculator,
@@ -84,7 +82,7 @@ function App() {
     <Fragment>
       <section className="min-h-screen">
         <div className="container mt-5">
-          <img className="h-32 w-32 float-left" src={oats} />
+          <img className="h-32 w-32 float-left" src={oats} alt=""/>
           <h1 className="text-6xl font-serif font-extrabold">
             Homemade Granola is healthier, cheaper, and you have the control!
           </h1>
