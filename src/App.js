@@ -81,15 +81,15 @@ function App() {
 
   return (
     <Fragment>
-      <section className="min-h-screen">
+      <section className="min-h-fit">
         <div className="container text-center">
           <img
-            className="mx-auto w-full md:w-4/5 lg:w-3/5 self-center pt-16 w-full"
+            className="mx-auto w-full md:w-4/5 lg:w-3/5 self-center pt-10 md:pt-16 w-full"
             src={homeImg}
             alt=""
           />
 
-          <h1 className="text-4xl font-sans mx-8 lg:mx-40 mt-16 text-brown-700">
+          <h1 className="text-2xl md:text-4xl font-sans mx-8 lg:mx-40 mt-12 md:mt-16 text-brown-700">
             Start your journey to the perfect bowl of crunchy, healthy and cheap{" "}
             <span className="font-extrabold underline decoration-wavy decoration-2 text-brown-900">
               Granola!
@@ -107,7 +107,6 @@ function App() {
             />
           </div>
         </div>
-
         <div class="custom-shape-divider-bottom-1649326114">
           {shapeDividerHome}
         </div>

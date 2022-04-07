@@ -38,8 +38,8 @@
   fill: #f8f0e5;
 }
 .custom-shape-divider-bottom-1649326114 {
-  position: absolute;
-  bottom: -10px;
+  position: relative;
+  bottom: -1px;
   left: 0;
   width: 100%;
   overflow: hidden;
