@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import _categories from "../utilities/_categories";
-import { downChevronIcon } from "../utilities/_svgs";
-import scrollTo from "../utilities/_scrollTo";
+import RoundedButton from "../components/RoundedButton";
 
 export default function CategoriesPage({ calculatorRef }) {
   return (
@@ -95,13 +94,15 @@ export default function CategoriesPage({ calculatorRef }) {
           </div>
         </div>
       </div>
-      <button
-        className="bg-brown-100 w-fit mx-auto py-2 px-4 rounded-3xl text-brown-900 flex shadow-lg mb-16"
-        onClick={() => scrollTo(calculatorRef)}
-      >
-        {downChevronIcon("fill-brown-900")}
-        <span className="self-center"> To calculator</span>
-      </button>
+      <RoundedButton
+        ref={calculatorRef}
+        theme={{
+          text: "text-brown-900",
+          bg: "bg-brown-100",
+          fill: "fill-brown-900",
+        }}
+        text="To Calculator"
+      />
     </Fragment>
   );
 }

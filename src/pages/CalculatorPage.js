@@ -3,8 +3,7 @@ import CompositionBar from "../components/CompositionBar";
 import Table from "../components/Table";
 import NutritionalFactsTable from "../components/NutritionalFactsTable";
 import SelectInput from "../components/SelectInput";
-import { downChevronIcon } from "../utilities/_svgs";
-import scrollTo from "../utilities/_scrollTo";
+import RoundedButton from "../components/RoundedButton";
 
 export default function CalculatorPage({ dispatch, state, recipeRef }) {
   return (
@@ -39,13 +38,15 @@ export default function CalculatorPage({ dispatch, state, recipeRef }) {
           <NutritionalFactsTable data={state.added} />
         </div>
       </div>
-      <button
-        onClick={() => scrollTo(recipeRef)}
-        className="bg-brown-900 w-fit mx-auto my-10 py-2 px-4 rounded-3xl text-brown-100 flex shadow-lg"
-      >
-        {downChevronIcon("fill-brown-100")}
-        <span className="self-center"> To Recipe Maker</span>
-      </button>
+      <RoundedButton
+        ref={recipeRef}
+        theme={{
+          text: "text-brown-100",
+          bg: "bg-brown-900",
+          fill: "fill-brown-100",
+        }}
+        text="To the Recipe"
+      />
     </Fragment>
   );
 }

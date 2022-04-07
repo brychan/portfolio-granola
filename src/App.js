@@ -1,18 +1,18 @@
 import { Fragment, useEffect, useReducer, useRef } from "react";
 import "./App.css";
-import oats from "./images/oats.png";
+import homeImg from "./images/homeimg.png";
 
 import data from "./data/_ingredients";
 
-import CategoriesPage from "./pages/CategoriesPage";
 import {
   shapeDividerCalculator,
   shapeDividerRecipes,
   shapeDividerHome,
 } from "./utilities/_svgs";
-
+import CategoriesPage from "./pages/CategoriesPage";
 import CalculatorPage from "./pages/CalculatorPage";
 import RecipePage from "./pages/RecipePage";
+import RoundedButton from "./components/RoundedButton";
 
 const initialState = {
   data,
@@ -71,6 +71,7 @@ function reducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const categoriesRef = useRef();
   const calculatorRef = useRef();
   const recipeRef = useRef();
 
@@ -81,23 +82,41 @@ function App() {
   return (
     <Fragment>
       <section className="min-h-screen">
-        <div className="container mt-5">
-          <img className="h-32 w-32 float-left" src={oats} alt=""/>
-          <h1 className="text-6xl font-serif font-extrabold">
-            Homemade Granola is healthier, cheaper, and you have the control!
+        <div className="container text-center">
+          <img
+            className="mx-auto w-full md:w-4/5 lg:w-3/5 self-center pt-16 w-full"
+            src={homeImg}
+            alt=""
+          />
+
+          <h1 className="text-4xl font-sans mx-8 lg:mx-40 mt-16 text-brown-700">
+            Start your journey to the perfect bowl of crunchy, healthy and cheap{" "}
+            <span className="font-extrabold underline decoration-wavy decoration-2 text-brown-900">
+              Granola!
+            </span>
           </h1>
-          <span className="text-lg font-sans">Heatlhiest Breakfast</span>
+          <div className="mt-12 md:mt-16">
+            <RoundedButton
+              ref={categoriesRef}
+              theme={{
+                text: "text-brown-100",
+                bg: "bg-brown-900",
+                fill: "fill-brown-100",
+              }}
+              text="To Ingredients"
+            />
+          </div>
         </div>
-        <div class="custom-shape-divider-bottom-1649262532">
+
+        <div class="custom-shape-divider-bottom-1649326114">
           {shapeDividerHome}
         </div>
       </section>
       <section className="min-h-screen bg-brown-900">
-        <div className="container text-center py-10 ">
+        <div className="container text-center py-10 " ref={categoriesRef}>
           <CategoriesPage calculatorRef={calculatorRef} />
         </div>
       </section>
-
       <section className="min-h-screen bg-brown-100">
         <div
           class="custom-shape-divider-top-1649189188"
