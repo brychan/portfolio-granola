@@ -15,8 +15,7 @@ export default function CalculatorPage({ dispatch, state, recipeRef }) {
               Create your recipe
             </h1>
             <span className="text-brown-700">
-              Start by adding your favorite ingredients, check the oils:solid
-              ratio and nutrition facts, and adjust if needed!
+              Add your favorite ingredients and see the results instantly!
             </span>
           </div>
           <SelectInput
@@ -25,12 +24,8 @@ export default function CalculatorPage({ dispatch, state, recipeRef }) {
             dispatch={dispatch}
           />
           <Table data={state.added} dispatch={dispatch} />
-          <div className="bg-brown-900 my-8 p-6 rounded-lg text-brown-100 shadow-md">
-            <h1 className="font-bold text-xl">
-              Recommended for a crunchy Granola:
-            </h1>
-            It's best to keep a ratio of 5:1 solids to fat content. The current
-            ratio is:
+          <div className="bg-brown-900 my-8 p-6 rounded-lg text-white shadow-md">
+            <h1 className="text-xl">Current ratio</h1>
             <CompositionBar data={state.added} />
           </div>
         </div>

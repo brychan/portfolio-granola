@@ -14,6 +14,7 @@ import CalculatorPage from "./pages/CalculatorPage";
 import RecipePage from "./pages/RecipePage";
 import RoundedButton from "./components/RoundedButton";
 
+/* Populate initial state with a starting ingredients */
 const initialState = {
   data,
   added: [
@@ -142,6 +143,12 @@ function App() {
         </div>
         <div className="container mt-6">
           <RecipePage data={state.added} />
+        </div>
+      </section>
+      <section className="bg-brown-900">
+        <div className="container text-brown-100 py-12 font-light">
+          * Disclaimer: This is a Porfolio website, ingredients, their health
+          benefits and nutritional values may not be accurate.
         </div>
       </section>
     </Fragment>
