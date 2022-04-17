@@ -28,7 +28,10 @@ export default function RecipePage({ data }) {
                         </h2>
                         <ul className="list-disc pl-10">
                             {data.map((ingredient) => (
-                                <li key={ingredient.name}>
+                                <li
+                                    key={ingredient.name}
+                                    aria-label="recipe-ingredient-item"
+                                >
                                     {ingredient.amount * portions} grams of{' '}
                                     <span className="font-bold">
                                         {ingredient.name}

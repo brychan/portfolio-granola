@@ -75,7 +75,6 @@ function App() {
     const categoriesRef = useRef()
     const calculatorRef = useRef()
     const recipeRef = useRef()
-
     return (
         <Fragment>
             <section className="min-h-fit">

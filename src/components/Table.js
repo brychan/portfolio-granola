@@ -9,11 +9,12 @@ export default function Table({ data, dispatch }) {
         amount: 0,
     })
     const handleConfirm = (id) => {
+        console.log(inputData)
         dispatch({
             type: 'setAmountInput',
             payload: {
                 id: inputData.id,
-                amount: inputData.amount,
+                amount: parseFloat(inputData.amount),
             },
         })
         setInputData({
@@ -27,6 +28,8 @@ export default function Table({ data, dispatch }) {
                 <div
                     key={row.id}
                     className="text-brown-900 border-b-2 border-brown-900 grid grid-cols-4 md:grid-cols-8 place-items-center items-center py-2"
+                    aria-label={`table-ingredient-${row.name}`}
+                    role="listitem"
                 >
                     <div className="md:col-span-2">
                         <CategoryBadge category={row.category} />
@@ -38,12 +41,13 @@ export default function Table({ data, dispatch }) {
                         {inputData.id === row.id ? (
                             <Input
                                 value={inputData.amount}
-                                onChange={(e) =>
+                                label={`edit-input-${row.name}`}
+                                onChange={(e) => {
                                     setInputData({
                                         ...inputData,
-                                        amount: Number(e.target.value),
+                                        amount: e.target.value,
                                     })
-                                }
+                                }}
                             />
                         ) : (
                             <span>{row.amount} grams</span>
@@ -52,11 +56,15 @@ export default function Table({ data, dispatch }) {
 
                     <div className="md:col-span-1 justify-self-end">
                         {inputData.id === row.id ? (
-                            <button onClick={() => handleConfirm(row.id)}>
+                            <button
+                                aria-label={`confirm-edit-ingredient-item-${row.name}`}
+                                onClick={() => handleConfirm(row.id)}
+                            >
                                 {confirmIcon}
                             </button>
                         ) : (
                             <button
+                                aria-label={`edit-ingredient-item-${row.name}`}
                                 onClick={() =>
                                     setInputData({
                                         id: row.id,
@@ -68,6 +76,7 @@ export default function Table({ data, dispatch }) {
                             </button>
                         )}
                         <button
+                            aria-label={`delete-ingredient-item-${row.name}`}
                             onClick={() =>
                                 dispatch({
                                     type: 'removeFromList',
